@@ -1,0 +1,42 @@
+.place-box-container {
+    padding-bottom: 132px;
+}
+
+.reserve-button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2vh;
+    padding-bottom: 0;
+}
+
+.reserve-button {
+    all: unset;
+    box-sizing: border-box;
+    width: 80%;
+    height: 42px;
+    background: #E8833A;
+    border-radius: 3px;
+
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+
+    color: #FFFFFF;
+}
+
+.reserve-button:hover {
+    filter: brightness(95%);
+}
+
+@media (max-width: 300px) {
+    .reserve-button {
+        font-size: 16px;
+        line-height: 8px;
+    }
+}
