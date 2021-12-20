@@ -1,5 +1,4 @@
-import FooterBox from '../FooterBox';
-import NavBar from '../NavBar';
+
 import Places from '../Places.js';
 import UserInputs from '../UserInputs';
 import './styles.css'

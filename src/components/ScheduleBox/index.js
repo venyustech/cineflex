@@ -1,4 +1,3 @@
-import FooterBox from '../FooterBox';
 import './styles.css';
 export default function ScheduleBox() {
     return (

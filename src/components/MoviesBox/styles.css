@@ -1,17 +1,19 @@
 .container-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 0 4vw;
     flex-wrap: wrap;
 }
 
 .movies-box {
+    display: flex;
     height: 209px;
     width: 145px;
     border-radius: 3px;
     background-color: white;
     box-shadow: 0px 2px 4px 3px #0000001A;
     margin-bottom: 2vh;
+    cursor: pointer;
 }
 
 .movies-box img {
@@ -20,6 +22,8 @@
     object-fit: contain;
     padding: 5px;
     border-radius: 5px;
+    cursor: pointer;
+
 }
 
 @media (max-width:300px) {

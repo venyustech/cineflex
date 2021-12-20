@@ -1,5 +1,5 @@
 import './styles.css'
-export default function () {
+export default function PlacesData() {
     return (
 
         <div className="places-container">
