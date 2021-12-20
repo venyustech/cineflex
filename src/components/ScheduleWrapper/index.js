@@ -1,4 +1,4 @@
-import HoursBox from '../HoursBox';
+import HoursBox from '../hoursBox/index.js';
 import './styles.css'
 
 export default function ScheduleWrapper({ dayInfos }) {

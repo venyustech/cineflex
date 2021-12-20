@@ -1,7 +1,7 @@
 import './styles.css'
 export default function PlacesLegend() {
     return (
-        <container className="places-contanier" >
+        <div className="places-contanier" >
 
             <div className='place-legend-wrapper'>
                 <div className='place-legend-card'>
@@ -18,8 +18,7 @@ export default function PlacesLegend() {
                 </div>
             </div>
 
-        </container>
-
+        </div>
 
     );
 }
