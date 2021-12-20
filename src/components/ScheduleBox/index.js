@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import FooterBox from '../FooterBox';
 import ScheduleWrapper from '../ScheduleWrapper';
 import './styles.css';
 
@@ -12,7 +13,7 @@ export default function ScheduleBox({ movieId }) {
         promise.then(answer => {
             setMovieInfos(answer.data)
         })
-    }, []);
+    }, [movieId]);
 
 
     if (movieInfos === null) {
@@ -22,10 +23,9 @@ export default function ScheduleBox({ movieId }) {
         <>
             <p className="spam-title">Selecione o horario</p>
             <div className="schedule-container">
-
-                <ScheduleWrapper movieInfos={movieInfos} />
-                <ScheduleWrapper />
+                <ScheduleWrapper dayInfos={movieInfos.days} />
             </div>
+            <FooterBox imageUrl={movieInfos.posterURL} movieTitle={movieInfos.title} />
         </>
     );
 }

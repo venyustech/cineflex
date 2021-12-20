@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import './styles.css';
+import FooterBox from '../FooterBox';
 
 export default function MoviesBox() {
     const [images, setImages] = useState([]);
@@ -16,8 +17,7 @@ export default function MoviesBox() {
             });
         }
     }, [loadAgain]);
-
-
+    <FooterBox movieIdd={images} />
     return (
         <>
             <p className="spam-title">Selecione o filme</p>

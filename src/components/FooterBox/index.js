@@ -1,14 +1,16 @@
 import './styles.css';
 
-export default function FooterBox() {
+export default function FooterBox({ imageUrl, movieTitle }) {
+    console.log("chegou:  ", movieTitle)
+
     return (
         <div className='selected-movie-wrapper' >
             <div className='selected-movie-box'>
                 <div className='selected-movie-image-wrapper'>
-                    <img src='https://i.imgur.com/xReItOy.png' alt='imagem-filme'></img>
+                    <img src={imageUrl} alt={movieTitle}></img>
                 </div>
             </div>
-            <p className='selected-movie-name'> Nome Do Filme Selecionado</p>
+            <p className='selected-movie-name'> {movieTitle}</p>
         </div>
     );
 }

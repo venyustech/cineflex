@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import FinishRequest from './pages/FinishRequest';
 import SelectMovie from "./pages/SelectMovie";
 import SelectPlace from "./pages/SelectPlace";
@@ -9,7 +10,7 @@ export default function App() {
 
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<SelectMovie />}> </Route>
+                <Route path="/" element={<SelectMovie />} > </Route>
                 <Route path="/sessoes/:movieId" element={<SelectSchedule />}></Route>
                 <Route path="/assentos/:placeId" element={<SelectPlace />}></Route>
                 <Route path="/sucesso" element={<FinishRequest />}></Route>
