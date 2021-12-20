@@ -10,8 +10,8 @@ export default function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<SelectMovie />}> </Route>
-                <Route path="/sessoes/iddofilme" element={<SelectSchedule />}></Route>
-                <Route path="/assentos/idSessao" element={<SelectPlace />}></Route>
+                <Route path="/sessoes/:movieId" element={<SelectSchedule />}></Route>
+                <Route path="/assentos/:placeId" element={<SelectPlace />}></Route>
                 <Route path="/sucesso" element={<FinishRequest />}></Route>
             </Routes>
         </BrowserRouter>

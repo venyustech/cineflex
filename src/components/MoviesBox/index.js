@@ -24,7 +24,7 @@ export default function MoviesBox() {
             <div className="container-wrapper">
                 {images.length === 0 ? 'Carregando...' : ''}
                 {images.map(image => (
-                    < Link to='/sessoes/iddofilme' >
+                    < Link to={`/sessoes/${image.id}`}>
                         <div className='movies-box'>
                             <img src={image.posterURL} alt="imagem do filme"></img>
                         </div>
