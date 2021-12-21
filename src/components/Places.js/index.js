@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import PlacesLegend from '../PlacesLegend';
 import UserInputs from '../UserInputs';
 import './styles.css'
@@ -17,7 +16,6 @@ export default function Places({ seat, newPlaces, setNewPlaces, reservePost, mov
         })
         setNewPlaces(newArray)
     }
-    console.log("seat: ", seat)
     return (
         <>
             <div className="places-container">
@@ -35,7 +33,17 @@ export default function Places({ seat, newPlaces, setNewPlaces, reservePost, mov
             </div>
             <PlacesLegend />
             <UserInputs infosPlace={newPlaces} reserve={reservePost} movieInfo={movieInfos} />
+            <div className='selected-movie-wrapper' >
+                <div className='selected-movie-box'>
+                    <div className='selected-movie-image-wrapper'>
+                        <img src={movieInfos.movie.posterURL} alt={movieInfos.movie.title}></img>
+                    </div>
+                </div>
+                <div class="movie-infos-card">
+                    <p className='selected-movie-name'> {movieInfos.movie.title}</p>
+                    <p className='selected-movie-name'> {movieInfos.day.weekday} - {movieInfos.name}</p>
+                </div>
+            </div>
         </>
-
     );
 }

@@ -1,8 +1,6 @@
 import './styles.css';
 
 export default function FooterBox({ imageUrl, movieTitle }) {
-    console.log("chegou:  ", movieTitle)
-
     return (
         <div className='selected-movie-wrapper' >
             <div className='selected-movie-box'>

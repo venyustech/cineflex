@@ -2,7 +2,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Places from '../Places.js';
-import UserInputs from '../UserInputs';
 import './styles.css'
 
 export default function PlaceBox({ placeId, reserve }) {
@@ -20,14 +19,12 @@ export default function PlaceBox({ placeId, reserve }) {
     if (placeInfos === null) {
         return <h1>Carregando...</h1>
     }
-    console.log("placeinfos:", placeInfos)
     return (
         <>
             <div className='place-box-container'>
                 <p className="spam-title">Selecione o(s) assento(s)</p>
                 <Places movieInfos={placeInfos} seat={placeInfos.seats} newPlaces={newPlaces} setNewPlaces={setNewPlaces} reservePost={reserve} />
             </div>
-
         </>
     );
 }
