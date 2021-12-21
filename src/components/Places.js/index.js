@@ -3,7 +3,7 @@ import PlacesLegend from '../PlacesLegend';
 import UserInputs from '../UserInputs';
 import './styles.css'
 
-export default function Places({ seat, newPlaces, setNewPlaces }) {
+export default function Places({ seat, newPlaces, setNewPlaces, reservePost, movieInfos }) {
 
     function changeColor(id) {
         const newArray = newPlaces.map(seat => {
@@ -17,7 +17,7 @@ export default function Places({ seat, newPlaces, setNewPlaces }) {
         })
         setNewPlaces(newArray)
     }
-
+    console.log("seat: ", seat)
     return (
         <>
             <div className="places-container">
@@ -34,7 +34,7 @@ export default function Places({ seat, newPlaces, setNewPlaces }) {
                 </div>
             </div>
             <PlacesLegend />
-            <UserInputs infosPlace={newPlaces} />
+            <UserInputs infosPlace={newPlaces} reserve={reservePost} movieInfo={movieInfos} />
         </>
 
     );

@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import './styles.css'
 
-export default function UserInputs({ infosPlace }) {
+export default function UserInputs({ infosPlace, reserve, movieInfo }) {
     const [name, setName] = useState("");
     const [cpf, setCpf] = useState("");
+
     function createSelectedIdBox() {
         const idValue = [];
         infosPlace.forEach(value => {
@@ -12,14 +14,28 @@ export default function UserInputs({ infosPlace }) {
                 idValue.push(value.id)
             }
         })
-        const reservePost = {
-            ids: idValue,
-            name: name,
-            cpf: cpf
-        }
-        console.log("reservePost: ", reservePost)
-        const promise = axios.post('https://mock-api.driven.com.br/api/v4/cineflex/seats/book-many', reservePost);
-        promise.then(answer => console.log("resposta: ", answer.data));
+        const seatName = [];
+        infosPlace.forEach(value => {
+            if (value.isSelected == true) {
+                seatName.push(value.name)
+            }
+        })
+
+
+        reserve(
+            {
+                ids: idValue,
+                name: name,
+                cpf: cpf,
+                seat: seatName,
+                date: movieInfo.day.date,
+                hour: movieInfo.name,
+                movieTitle: movieInfo.movie.title,
+
+            }
+        )
+
+        console.log("reservePost: ", reserve)
     }
 
     return (
@@ -42,10 +58,11 @@ export default function UserInputs({ infosPlace }) {
                     </div>
                 </div>
             </div>
-
-            <div className='reserve-button-wrapper'>
-                <button className='reserve-button' onClick={createSelectedIdBox} >Reservar assento(s)</button>
-            </div>
+            <Link to="/sucesso">
+                <div className='reserve-button-wrapper'>
+                    <button className='reserve-button' onClick={createSelectedIdBox} >Reservar assento(s)</button>
+                </div>
+            </Link>
         </>
     );
 }

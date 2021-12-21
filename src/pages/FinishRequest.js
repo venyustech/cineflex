@@ -1,11 +1,11 @@
 import FinishBox from "../components/FinishBox";
 import NavBar from "../components/NavBar";
 
-export default function FinishRequest() {
+export default function FinishRequest({ reservePost }) {
     return (
         <>
             <NavBar />
-            <FinishBox />
+            <FinishBox reserve={reservePost} />
         </>
     );
 }
